@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wang Jiexi — incoming master's student at Xi'an Jiaotong University. Research interests in computational pathology, medical AI, and efficient deep learning."
+      content="Wang Jiexi — undergraduate student in Artificial Intelligence at Southwest Jiaotong University and incoming master's student at Xi'an Jiaotong University."
     />
     <meta name="theme-color" content="#102f35" />
     <title>Wang Jiexi | Academic Homepage</title>
@@ -224,6 +224,25 @@
         color: rgba(255, 253, 248, 0.52);
         font-size: 13px;
       }
+      .incoming-role {
+        width: fit-content;
+        margin-top: 11px;
+        padding: 6px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        color: rgba(255, 253, 248, 0.62);
+        font-size: 10px;
+        font-weight: 650;
+        letter-spacing: 0.02em;
+      }
+      .incoming-role span {
+        margin-right: 6px;
+        color: var(--mint);
+        font-size: 8px;
+        font-weight: 850;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
       .intro {
         max-width: 670px;
         margin: 25px 0 0;
@@ -231,32 +250,87 @@
         font-size: 14px;
         line-height: 1.85;
       }
-      .hero-links {
+      .hero-contact {
         display: flex;
+        align-items: center;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 12px;
         margin-top: 31px;
       }
-      .pill {
+      .social-icons {
+        display: flex;
+        gap: 9px;
+      }
+      .icon-link {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 50%;
+        color: var(--white);
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .icon-link svg,
+      .contact-email svg {
+        width: 19px;
+        height: 19px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
+      }
+      .icon-link.github svg {
+        fill: currentColor;
+        stroke: none;
+      }
+      .icon-link.primary {
+        color: var(--deep);
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .icon-link:hover,
+      .contact-email:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.34);
+      }
+      .icon-link.primary:hover {
+        background: #ef8059;
+        border-color: #ef8059;
+      }
+      .orcid-icon {
+        width: 21px;
+        height: 21px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: #fff;
+        background: #a6ce39;
+        font-family: Arial, sans-serif;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: -0.08em;
+      }
+      .contact-email {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        padding: 10px 15px;
+        gap: 9px;
+        min-height: 44px;
+        padding: 0 14px;
         border: 1px solid rgba(255, 255, 255, 0.18);
         border-radius: 999px;
         color: var(--white);
         font-size: 11px;
-        font-weight: 750;
-        transition: 0.2s;
-      }
-      .pill:hover {
-        transform: translateY(-2px);
-        background: rgba(255, 255, 255, 0.08);
-      }
-      .pill.primary {
-        color: var(--deep);
-        background: var(--accent);
-        border-color: var(--accent);
+        font-weight: 700;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
       }
       .profile {
         position: relative;
@@ -987,6 +1061,14 @@
           grid-template-columns: 1fr;
           gap: 4px;
         }
+        .contact-email {
+          max-width: 100%;
+        }
+        .contact-email span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
       @media (prefers-reduced-motion: reduce) {
         html {
@@ -1025,28 +1107,57 @@
         <div class="hero-copy">
           <div class="eyebrow">Academic homepage · 2026</div>
           <h1>Wang <em>Jiexi.</em></h1>
-          <div class="role">Incoming Master's Student</div>
-          <div class="affiliation">Xi'an Jiaotong University · China</div>
+          <div class="role">
+            Undergraduate Student in Artificial Intelligence
+          </div>
+          <div class="affiliation">Southwest Jiaotong University · China</div>
+          <div class="incoming-role">
+            <span>Incoming</span>M.S. Student · Xi'an Jiaotong University
+          </div>
           <p class="intro">
-            I received my undergraduate education in Artificial Intelligence at
+            I am currently pursuing a B.Eng. in Artificial Intelligence at
             Southwest Jiaotong University. My interests lie in computational
             pathology, medical AI, and efficient deep learning, with a broader
             focus on building reliable and efficient intelligent systems.
           </p>
-          <div class="hero-links">
-            <!-- Replace these generic links with your own profile URLs. --><a
-              class="pill primary"
-              href="https://github.com/dreamingutopia"
-              target="_blank"
-              rel="noopener"
-              >GitHub ↗</a
-            ><a
-              class="pill"
-              href="https://orcid.org/0009-0007-0572-7152"
-              target="_blank"
-              rel="noopener"
-              >ORCID ↗</a
-            ><a class="pill" href="#projects">Explore my work ↓</a>
+          <div class="hero-contact">
+            <div class="social-icons" aria-label="Profile links">
+              <a
+                class="icon-link github primary"
+                href="https://github.com/dreamingutopia"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub profile"
+                title="GitHub"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="icon-link"
+                href="https://orcid.org/0009-0007-0572-7152"
+                target="_blank"
+                rel="noopener"
+                aria-label="ORCID profile"
+                title="ORCID"
+                ><span class="orcid-icon" aria-hidden="true">iD</span></a
+              >
+            </div>
+            <a
+              class="contact-email"
+              href="mailto:jesse4296@my.swjtu.edu.cn"
+              aria-label="OpenReview registration email"
+              title="OpenReview registration email"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m4 7 8 6 8-6" />
+              </svg>
+              <span>jesse4296@my.swjtu.edu.cn</span>
+            </a>
           </div>
         </div>
         <aside class="profile" aria-label="Profile summary">
@@ -1081,11 +1192,11 @@
           </p>
           <div class="about-copy">
             <p>
-              I am an incoming master's student at Xi'an Jiaotong University. I
-              completed my undergraduate studies in Artificial Intelligence at
-              Southwest Jiaotong University, where I developed a foundation in
-              machine learning, deep learning, mathematical modeling, and
-              software development.
+              I am an undergraduate student in Artificial Intelligence at
+              Southwest Jiaotong University and an incoming master's student at
+              Xi'an Jiaotong University. During my undergraduate studies, I have
+              developed a foundation in machine learning, deep learning,
+              mathematical modeling, and software development.
             </p>
             <p>
               I am particularly interested in the intersection of artificial
